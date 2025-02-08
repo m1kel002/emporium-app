@@ -1,17 +1,18 @@
-import './ProductPage.scss'
-import ProductCard from '../../components/ProductCard/ProductCard';
+import productData from "../../../shared/mocks/products.json";
+import "./ProductPage.scss";
+import ProductCard from "../../components/ProductCard/ProductCard";
+import { useState } from "preact/hooks";
+import { Product } from "../../../shared/models/Product";
 
 export default function ProductPage() {
+	const [data, setData] = useState<Array<Product>>();
+	setData(productData);
 
-    const products = [{name: 'Shoes', price: 150.00}, {name: 'Shoes2', price: 150.00},
-        {name: 'Shoes3', price: 150.00}
-    ];
-
-    return (
-        <div className='products-container'>
-            {products.map((product, index) => (
-                <ProductCard key={index} product={product}></ProductCard>
-            ))}
-        </div>
-    );
+	return (
+		<div className="products-container">
+			{data?.map((product, index) => (
+				<ProductCard key={index} product={product}></ProductCard>
+			))}
+		</div>
+	);
 }

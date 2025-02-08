@@ -1,4 +1,4 @@
 .products-container {
-    display: flex;
-    align-content: space-between;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
 }

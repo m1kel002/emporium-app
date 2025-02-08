@@ -1,0 +1,39 @@
+[
+    {
+        "name": "Shoes",
+        "price": 150.00
+    },
+    {
+        "name": "Shampoo",
+        "price": 90.00
+    },
+    {
+        "name": "Camera",
+        "price": 9500.00
+    },
+    {
+        "name": "Watch",
+        "price": 5050.00
+    },
+    
+    {
+        "name": "Bag",
+        "price": 150.00
+    },
+    {
+        "name": "Water Jug",
+        "price": 700
+    },
+    {
+        "name": "Lotion",
+        "price": 70
+    },
+    {
+        "name": "White Shoes",
+        "price": 7000
+    },
+    {
+        "name": "Another Shoes",
+        "price": 5000
+    }
+]
