@@ -8,9 +8,9 @@
       "withStyle": true,
       "withTest": true,
       "withStory": false,
-      "withLazy": true
+      "withLazy": false
     }
   },
-  "usesCssModule": true,
+  "usesCssModule": false,
   "cssPreprocessor": "scss"
 }
