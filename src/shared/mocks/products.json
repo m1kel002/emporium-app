@@ -1,38 +1,47 @@
 [
     {
+        "image": "product1.jpg",
         "name": "Shoes",
         "price": 150.00
     },
     {
+        "image": "product1.jpg",
         "name": "Shampoo",
         "price": 90.00
     },
     {
+        "image": "product1.jpg",
         "name": "Camera",
         "price": 9500.00
     },
     {
+        "image": "product1.jpg",
         "name": "Watch",
         "price": 5050.00
     },
     
     {
+        "image": "product1.jpg",
         "name": "Bag",
         "price": 150.00
     },
     {
+        "image": "product1.jpg",
         "name": "Water Jug",
         "price": 700
     },
     {
+        "image": "product1.jpg",
         "name": "Lotion",
         "price": 70
     },
     {
+        "image": "product1.jpg",
         "name": "White Shoes",
         "price": 7000
     },
     {
+        "image": "product1.jpg",
         "name": "Another Shoes",
         "price": 5000
     }
