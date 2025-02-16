@@ -10,7 +10,9 @@ export function App() {
 			<HeaderNav></HeaderNav>
 			<ProductPageBanner></ProductPageBanner>
 			<ProductPageCategories></ProductPageCategories>
-			<ProductPage></ProductPage>
+			<div className="ProductPageContainer">
+				<ProductPage></ProductPage>
+			</div>
 		</div>
 	);
 }

@@ -44,5 +44,10 @@
         "image": "product1.jpg",
         "name": "Another Shoes",
         "price": 5000
+    },
+    {
+        "image": "product1.jpg",
+        "name": "Red Shoes",
+        "price": 5000
     }
 ]

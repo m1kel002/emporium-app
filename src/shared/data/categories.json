@@ -1,0 +1,9 @@
+[
+	{ "name": "Supermarket", "image": "./src/assets/groceries.png" },
+	{ "name": "Shoes", "image": "./src/assets/running-shoe.png" },
+	{ "name": "Laptops & Computers", "image": "./src/assets/computer.png" },
+	{ "name": "Home Appliances", "image": "./src/assets/electronics.png" },
+	{ "name": "Cameras", "image": "./src/assets/camera.png" },
+	{ "name": "Health & Personal Care", "image": "./src/assets/soap.png" },
+	{ "name": "Home Entertainment", "image": "./src/assets/tv.png" }
+]
