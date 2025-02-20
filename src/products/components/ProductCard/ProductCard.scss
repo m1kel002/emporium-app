@@ -6,6 +6,12 @@
     height: 263px;
     display: flex;
     flex-direction: column;
+    border: 1px white solid;
+
+    &:hover {
+        cursor: pointer;
+        border: 1px black solid;
+    }
 
     .product-image {
         max-height: 195px;
