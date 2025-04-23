@@ -1,7 +1,11 @@
 import './ProductDetailsPage.scss'
 
-export default function ProductDetailsPage() {
+const ProductDetailsPage = () => {
     return (
-        <div className='product-details-container'></div>
+        <div className='product-details-container'>
+            <p>Product Details</p>
+        </div>
     );
 }
+
+export default ProductDetailsPage;
