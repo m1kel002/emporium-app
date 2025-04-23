@@ -8,7 +8,7 @@ interface CategoryCardProps {
 const CategoryCard: FC<CategoryCardProps> = (props: CategoryCardProps) => (
   <div className="CategoryCard" data-testid="CategoryCard">
     <div className="CategoryImage">
-      <img src={props.category.image} alt="category" />
+      <img src={props.category.image} alt={props.category.name} />
     </div>
     <div className="CategoryDetails">{props.category.name}</div>
   </div>
