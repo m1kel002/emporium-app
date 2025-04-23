@@ -5,14 +5,16 @@ interface ProductProps {
 	product: Product;
 }
 
-export default function ProductCard(props: ProductProps) {
+const ProductCard = ({product}: ProductProps) => {
 	return (
 		<div className="product-card">
-			<img className="product-image" src={props.product.image}></img>
+			<img className="product-image" src={product.image ? product.image: 'no-image.png'}></img>
 			<div className="product-details">
-				<div className="product-name">{props.product.name}</div>
-				<div className="product-price">${props.product.price}</div>
+				<div className="product-name">{product.name}</div>
+				<div className="product-price">${product.price}</div>
 			</div>
 		</div>
 	);
 }
+
+export default ProductCard;
