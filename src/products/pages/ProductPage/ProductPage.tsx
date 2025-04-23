@@ -3,8 +3,10 @@ import ProductCard from "../../components/ProductCard/ProductCard";
 import { useEffect, useState } from "preact/hooks";
 import { Product } from "../../../shared/models/Product";
 import { fetchProducts } from "../../services/products.repository";
+import ProductPageBanner from "../../components/ProductPageBanner/ProductPageBanner";
+import ProductPageCategories from "../../components/ProductPageCategories/ProductPageCategories";
 
-export default function ProductPage() {
+const ProductPage = () => {
   const [data, setData] = useState<Array<Product>>();
 
   useEffect(() => {
@@ -21,10 +23,18 @@ export default function ProductPage() {
   }, []);
 
   return (
-    <div className="products-container">
-      {data?.map((product, index) => (
-        <ProductCard key={index} product={product}></ProductCard>
-      ))}
-    </div>
+    <>
+      <ProductPageBanner></ProductPageBanner>
+      <ProductPageCategories></ProductPageCategories>
+      <div className="ProductPageContainer">
+        <div className="products-container">
+          {data?.map((product, index) => (
+            <ProductCard key={index} product={product}></ProductCard>
+          ))}
+        </div>
+      </div>
+    </>
   );
-}
+};
+
+export default ProductPage;
