@@ -4,7 +4,7 @@ import ProductPage from "./products/pages/ProductPage/ProductPage";
 
 export const router = createBrowserRouter([
     {
-		path: '/product/:id', element: <ProductDetailsPage />
+		path: '/products/:id', element: <ProductDetailsPage />
 	},
 	{
 		path: '/', element: <ProductPage/>
