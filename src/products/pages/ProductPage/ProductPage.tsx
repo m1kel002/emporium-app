@@ -5,6 +5,7 @@ import { Product } from "../../../shared/models/Product";
 import { fetchProducts } from "../../services/products.repository";
 import ProductPageBanner from "../../components/ProductPageBanner/ProductPageBanner";
 import ProductPageCategories from "../../components/ProductPageCategories/ProductPageCategories";
+import { Link } from "react-router-dom";
 
 const ProductPage = () => {
   const [data, setData] = useState<Array<Product>>();
@@ -29,7 +30,8 @@ const ProductPage = () => {
       <div className="ProductPageContainer">
         <div className="products-container">
           {data?.map((product, index) => (
-            <ProductCard key={index} product={product}></ProductCard>
+            <Link to={`/products/${product.id}`}>
+            <ProductCard key={index} product={product}></ProductCard></Link>
           ))}
         </div>
       </div>
