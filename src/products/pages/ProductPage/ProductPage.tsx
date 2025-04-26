@@ -27,7 +27,7 @@ const ProductPage = () => {
     <>
       <ProductPageBanner></ProductPageBanner>
       <ProductPageCategories></ProductPageCategories>
-      <div className="ProductPageContainer">
+      <div className="product-page-container">
         <div className="products-container">
           {data?.map((product, index) => (
             <Link to={`/products/${product.id}`}>
