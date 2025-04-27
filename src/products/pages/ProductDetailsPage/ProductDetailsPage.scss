@@ -1,5 +1,8 @@
 .product-details-container {
-  display: flex;
+
+  .details-container {
+    display: flex;
+  }
 
   .product-image-container {
     .product-image {
@@ -48,6 +51,11 @@
       }
     }
 
+    .quantity-container {
+        display: flex;
+        align-items: center;
+    }
+
     .total-price-container {
       margin: 20px 0;
 
@@ -72,6 +80,16 @@
         }
       }
     }
+
+    .share-container {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .additional-info-container {
+    margin-top: 20px;
   }
 }
 
