@@ -5,6 +5,8 @@ interface ButtonProps {
 }
 
 const TileButton = ({ title }: ButtonProps) => {
+  // TODO: implement text trimming for long texts
+  // TODO: add tooltip on hover
   return (
     <div className="tile-button-container">
       <button className="tile-button">{title}</button>
