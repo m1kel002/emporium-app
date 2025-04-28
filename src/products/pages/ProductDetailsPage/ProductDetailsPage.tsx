@@ -3,14 +3,15 @@ import { Rating, Tabs, Tab } from "@mui/material";
 import TileButton from "../../../shared/components/TileButton/TileButton";
 import ProductQuantity from "../../components/ProductQuantity/ProductQuantity";
 import { useState } from "preact/hooks";
+import ProductDescriptionTabPanel from "../ProductDescriptionTabPanel/ProductDescriptionTabPanel";
+import ProductReviewTabPanel from "../ProductReviewTabPanel/ProductReviewTabPanel";
 
 const ProductDetailsPage = () => {
-
   const [tabIndex, setTabIndex] = useState(0);
 
   const handleChange = (event: PointerEvent, tabIndex: number) => {
-    setTabIndex(tabIndex)
-  }
+    setTabIndex(tabIndex);
+  };
   return (
     <div className="product-details-container">
       <div className="details-container">
@@ -83,11 +84,17 @@ const ProductDetailsPage = () => {
         </div>
       </div>
       <div className="additional-info-container">
-        <Tabs value={tabIndex} onChange={handleChange} textColor="primary" indicatorColor="primary">
+        <Tabs
+          value={tabIndex}
+          onChange={handleChange}
+          textColor="primary"
+          indicatorColor="primary"
+        >
           <Tab label="Description"></Tab>
           <Tab label="Reviews"></Tab>
-          </Tabs>
-
+        </Tabs>
+        <ProductDescriptionTabPanel value={tabIndex} index={0}></ProductDescriptionTabPanel>
+        <ProductReviewTabPanel value={tabIndex} index={1}></ProductReviewTabPanel>
       </div>
     </div>
   );
