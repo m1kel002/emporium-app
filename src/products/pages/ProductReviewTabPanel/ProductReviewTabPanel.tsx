@@ -1,4 +1,5 @@
 import TabPanelProps from "../../../shared/models/TabPanelProps";
+import ReviewCard from "../../components/ReviewCard/ReviewCard";
 
 const ProductReviewTabPanel = ({ value, index }: TabPanelProps) => {
   return (
@@ -8,7 +9,9 @@ const ProductReviewTabPanel = ({ value, index }: TabPanelProps) => {
       id={`tabpanel-${index}`}
       aria-labelledby={`tab-${index}`}
     >
-      Product Review
+      <ReviewCard></ReviewCard>
+      <ReviewCard></ReviewCard>
+      <ReviewCard></ReviewCard>
     </div>
   );
 };
