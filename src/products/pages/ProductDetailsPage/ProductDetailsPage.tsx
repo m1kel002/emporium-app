@@ -1,10 +1,11 @@
 import "./ProductDetailsPage.scss";
-import { Rating, Tabs, Tab } from "@mui/material";
+import { Tabs, Tab } from "@mui/material";
 import TileButton from "../../../shared/components/TileButton/TileButton";
 import ProductQuantity from "../../components/ProductQuantity/ProductQuantity";
 import { useState } from "preact/hooks";
 import ProductDescriptionTabPanel from "../ProductDescriptionTabPanel/ProductDescriptionTabPanel";
 import ProductReviewTabPanel from "../ProductReviewTabPanel/ProductReviewTabPanel";
+import ProductRating from "../../../shared/components/ProductRating/ProductRating";
 
 const ProductDetailsPage = () => {
   const [tabIndex, setTabIndex] = useState(0);
@@ -44,13 +45,7 @@ const ProductDetailsPage = () => {
           <div className="rating-sold-container">
             <div className="rating-container">
               <div className="rating-label">Rating:</div>
-              <Rating
-                className="rating-test"
-                name="rating"
-                precision={0.5}
-                value={3.5}
-                readOnly
-              ></Rating>
+              <ProductRating rating={3.5} precision={0.5}></ProductRating>
             </div>
             <div className="sold-container">Sold: 12</div>
           </div>
