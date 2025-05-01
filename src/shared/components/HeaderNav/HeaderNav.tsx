@@ -6,7 +6,9 @@ import AccountCircleOutlined from "@mui/icons-material/AccountCircleOutlined";
 export default function HeaderNav() {
 	return (
 		<header>
-			<div className="logo-container">Emporium</div>
+			<div className="logo-container">
+				<a href="/" className="logo">Emporium</a>
+				</div>
 			<div className="nav-container">
 				<ul>
 					<li>
