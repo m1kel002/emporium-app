@@ -45,7 +45,7 @@ const ProductDetailsPage = () => {
           <div className="rating-sold-container">
             <div className="rating-container">
               <div className="rating-label">Rating:</div>
-              <ProductRating rating={3.5} precision={0.5}></ProductRating>
+              <ProductRating rating={3.5}></ProductRating>
             </div>
             <div className="sold-container">Sold: 12</div>
           </div>
