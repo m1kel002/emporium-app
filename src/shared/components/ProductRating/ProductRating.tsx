@@ -3,7 +3,7 @@ import "./ProductRating.scss";
 
 interface RatingProps {
     rating: number;
-    precision: number;
+    precision?: number;
 
 }
 
