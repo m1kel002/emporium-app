@@ -12,3 +12,17 @@ export const fetchProducts = async (): Promise<Product[] | undefined> => {
     console.error(`Error fetching products: ${error}`);
   }
 };
+
+export const fetchProductDetails = async (
+  id: string
+): Promise<Product | undefined> => {
+  const endpoint = `${BASE_URL}/product/${id}`;
+
+  try {
+    const response = await fetch(endpoint);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(`Error fetching product details ${error}`);
+  }
+};
