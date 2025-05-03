@@ -2,17 +2,51 @@ import "./ProductDetailsPage.scss";
 import { Tabs, Tab } from "@mui/material";
 import TileButton from "../../../shared/components/TileButton/TileButton";
 import ProductQuantity from "../../components/ProductQuantity/ProductQuantity";
-import { useState } from "preact/hooks";
+import { useEffect, useState } from "preact/hooks";
 import ProductDescriptionTabPanel from "../ProductDescriptionTabPanel/ProductDescriptionTabPanel";
 import ProductReviewTabPanel from "../ProductReviewTabPanel/ProductReviewTabPanel";
 import ProductRating from "../../../shared/components/ProductRating/ProductRating";
+import { Product } from "../../../shared/models/Product";
+import { fetchProductDetails } from "../../services/products.repository";
+import { useParams } from "react-router-dom";
 
 const ProductDetailsPage = () => {
   const [tabIndex, setTabIndex] = useState(0);
+  const [product, setProduct] = useState<Product>();
+  const [quantity, setQuantity] = useState(1);
+  const { id } = useParams();
 
   const handleChange = (event: PointerEvent, tabIndex: number) => {
     setTabIndex(tabIndex);
   };
+
+  useEffect(() => {
+    const getProduct = async () => {
+      try {
+        if (id) {
+          const data = await fetchProductDetails(id);
+          setProduct(data);
+        }
+      } catch (error) {
+        console.log(`Error getting product details: ${error}`);
+      }
+    };
+    getProduct();
+  }, [id]);
+  let displayVariation = undefined;
+  if (product?.variations) {
+      displayVariation = (
+      <div className="variation-container">
+        <span>Variation:</span>
+        <div className="variation">
+          {product?.variations.map((variation, index) => (
+            <TileButton key={index} title={variation}></TileButton>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="product-details-container">
       <div className="details-container">
@@ -41,29 +75,27 @@ const ProductDetailsPage = () => {
           </div>
         </div>
         <div className="product-container">
-          <h1>Black Shoes</h1>
+          <h1>{product?.name}</h1>
           <div className="rating-sold-container">
             <div className="rating-container">
               <div className="rating-label">Rating:</div>
-              <ProductRating rating={3.5}></ProductRating>
+              <ProductRating
+                rating={parseFloat(product?.rating || "0")}
+              ></ProductRating>
             </div>
             <div className="sold-container">Sold: 12</div>
           </div>
-          <div className="variation-container">
-            <span>Variation:</span>
-            <div className="variation">
-              <TileButton title={"black"}></TileButton>
-              <TileButton title={"black"}></TileButton>
-              <TileButton title={"black"}></TileButton>
-            </div>
-          </div>
+          {displayVariation}
           <div className="quantity-container">
             Quantity:
-            <ProductQuantity></ProductQuantity>
+            <ProductQuantity
+              quantity={quantity}
+              setQuantity={setQuantity}
+            ></ProductQuantity>
           </div>
           <div className="total-price-container">
             Total Price:
-            <div className="price">$ 69</div>
+            <div className="price">$ {(product?.price || 1) * quantity}</div>
           </div>
 
           <div className="cta-container">
@@ -88,8 +120,14 @@ const ProductDetailsPage = () => {
           <Tab label="Description"></Tab>
           <Tab label="Reviews"></Tab>
         </Tabs>
-        <ProductDescriptionTabPanel value={tabIndex} index={0}></ProductDescriptionTabPanel>
-        <ProductReviewTabPanel value={tabIndex} index={1}></ProductReviewTabPanel>
+        <ProductDescriptionTabPanel
+          value={tabIndex}
+          index={0}
+        ></ProductDescriptionTabPanel>
+        <ProductReviewTabPanel
+          value={tabIndex}
+          index={1}
+        ></ProductReviewTabPanel>
       </div>
     </div>
   );
