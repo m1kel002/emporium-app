@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./ProductPageCategories.scss";
 import CategoryCard from "../CategoryCard/CategoryCard";
 import categoriesData from "../../../shared/data/categories.json";
@@ -8,7 +8,11 @@ interface ProductPageCategories {}
 
 export default function ProductPageCategories() {
 	const [categories, setCategories] = useState<Array<Category>>();
-	setCategories(categoriesData);
+
+	useEffect(() => {
+		setCategories(categoriesData);
+	}, []);
+
 	return (
 		<div className="ProductPageCategories" data-testid="ProductPageCategories">
 			<h4>Categories</h4>
