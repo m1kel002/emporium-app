@@ -7,11 +7,11 @@ interface ProductProps {
 
 const ProductCard = ({product}: ProductProps) => {
 	return (
-		<div className="product-card">
-			<img className="product-image" src={product.image ? product.image: 'default.png'}></img>
+		<div className="product-card" data-testid="ProductCard">
+			<img className="product-image" src={product.image ? product.image: 'default.png'} data-testid="ProductImage"></img>
 			<div className="product-details">
-				<div className="product-name">{product.name}</div>
-				<div className="product-price">${product.price}</div>
+				<div className="product-name" data-testid="ProductName">{product.name}</div>
+				<div className="product-price" data-testid="ProductPrice">${product.price}</div>
 			</div>
 		</div>
 	);
