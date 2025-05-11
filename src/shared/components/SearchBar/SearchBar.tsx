@@ -17,6 +17,7 @@ const SearchBar = () => {
         variant="outlined"
         value={searchText}
         onChange={onChange}
+        className="search"
       ></TextField>
     </>
   );
