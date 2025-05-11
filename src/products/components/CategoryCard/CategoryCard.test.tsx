@@ -8,7 +8,7 @@ describe("<CategoryCard />", () => {
     const category = {
       name: "test",
       image: "test",
-    };
+    } as Category;
     render(<CategoryCard category={category} />);
 
     const categoryCard = screen.getByTestId("CategoryCard");
