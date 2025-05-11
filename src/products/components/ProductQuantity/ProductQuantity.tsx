@@ -17,20 +17,19 @@ const ProductQuantity = ({ quantity, setQuantity }: QuantityProps) => {
   };
 
   return (
-    <div className="product-quantity-container">
-      <button className="minus">
-        <RemoveIcon
-          onClick={() => {
+    <div className="product-quantity-container" data-testid="quantityContainer">
+      <button className="minus" data-testid="minus" onClick={() => {
             handleQuantity(-1);
-          }}
+      }}>
+        <RemoveIcon
         ></RemoveIcon>
       </button>
-      <span className="quantity">{quantity}</span>
-      <button className="add">
-        <AddIcon
-          onClick={() => {
+      <span className="quantity" data-testid="quantity">{quantity}</span>
+      <button className="add" data-testid="add" onClick={() => {
             handleQuantity(1);
-          }}
+          }}>
+        <AddIcon
+
         ></AddIcon>
       </button>
     </div>
