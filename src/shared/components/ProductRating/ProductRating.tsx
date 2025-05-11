@@ -8,7 +8,7 @@ interface RatingProps {
 }
 
 const ProductRating = ({rating= 0, precision=0.5}: RatingProps) => {
-  return <Rating precision={precision} value={rating} readOnly></Rating>;
+  return <Rating precision={precision} value={rating} readOnly data-testid="ProductRating"></Rating>;
 };
 
 export default ProductRating;

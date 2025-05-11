@@ -8,7 +8,7 @@ import SearchBar from '../SearchBar/SearchBar';
 export default function HeaderNav() {
 	const showSearchBar = true;
 	return (
-		<header>
+		<header data-testid="HeaderNav">
 			<div className="logo-container">
 				<a href="/" className="logo">Emporium</a>
 				</div>

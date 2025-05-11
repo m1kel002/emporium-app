@@ -9,7 +9,7 @@ const TileButton = ({ title }: ButtonProps) => {
   // TODO: add tooltip on hover
   return (
     <div className="tile-button-container">
-      <button className="tile-button">{title}</button>
+      <button className="tile-button" data-testid="TileTitle">{title}</button>
     </div>
   );
 };
