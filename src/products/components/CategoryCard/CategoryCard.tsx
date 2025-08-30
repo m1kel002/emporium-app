@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import './CategoryCard.scss';
-import { Category } from '../../../shared/models/category';
+import { Category } from '../../../shared/models/Category';
 
 interface CategoryCardProps {
   category: Category;

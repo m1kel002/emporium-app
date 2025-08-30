@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import CategoryCard from "./CategoryCard";
-import { Category } from "../../../shared/models/category";
+import { Category } from "../../../shared/models/Category";
 
 describe("<CategoryCard />", () => {
   test("it should mount", () => {

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./ProductPageCategories.scss";
 import CategoryCard from "../CategoryCard/CategoryCard";
 import categoriesData from "../../../shared/data/categories.json";
-import { Category } from "../../../shared/models/category";
+import { Category } from "../../../shared/models/Category";
 
 interface ProductPageCategories {}
 
