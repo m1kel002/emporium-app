@@ -5,4 +5,5 @@ export interface Product {
 	price: number;
 	rating?: string;
 	variations?: Array<string>;
+	soldCount?: number;
 }
