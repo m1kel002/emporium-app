@@ -83,7 +83,7 @@ const ProductDetailsPage = () => {
                 rating={parseFloat(product?.rating || "0")}
               ></ProductRating>
             </div>
-            <div className="sold-container">Sold: {(product?.soldCount || 0)}</div>
+            <div className="sold-container">Sold: {product?.soldCount || 0}</div>
           </div>
           {displayVariation}
           <div className="quantity-container">
