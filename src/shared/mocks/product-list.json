@@ -1,0 +1,21 @@
+[
+    {
+    "count": 7,
+    "next": "http://localhost:8000/api/product?page=3&page_size=1",
+    "previous": "http://localhost:8000/api/product?page_size=1",
+    "results": [
+        {
+            "id": 3,
+            "name": "White Shoes",
+            "price": "5000.00",
+            "quantity": 5,
+            "shop": {
+                "id": 1,
+                "name": "Shop 2"
+            },
+            "created_at": "2025-04-14T06:33:23.774724Z",
+            "updated_at": "2025-04-14T06:33:23.774743Z"
+        }
+    ]
+}
+]
