@@ -16,6 +16,21 @@ const ProductDetailsPage = () => {
   const [quantity, setQuantity] = useState(1);
   const { id } = useParams();
   let displayVariation = undefined;
+  const SOCIAL_LINKS = [
+    {
+
+      title: "Facebook",
+      url: "https://www.facebook.com/sharer/sharer.php?u=",
+    },
+    {
+      title: "X",
+      url: "https://twitter.com/intent/tweet?url=",
+    },
+    {
+      title: "Instagram",
+      url: "https://www.instagram.com/?url=",
+    }
+  ]
 
   const handleChange = (event: PointerEvent, tabIndex: number) => {
     setTabIndex(tabIndex);
@@ -70,6 +85,7 @@ const ProductDetailsPage = () => {
               ></ProductRating>
             </div>
             <div className="sold-container">Sold: {product?.soldCount || 0}</div>
+            <div className="stocks-container">Stocks: {product?.stocks || 0}</div>
           </div>
           <div className="quantity-container">
             Quantity:
@@ -89,9 +105,11 @@ const ProductDetailsPage = () => {
 
           <div className="share-container">
             Share:
-            <TileButton key={"fb"} title={"Facebook"}></TileButton>
-            <TileButton key={"x"} title={"X"}></TileButton>
-            <TileButton key={"ig"} title={"Instagram"}></TileButton>
+            {SOCIAL_LINKS.map((link) => (
+              <div className="tile-button-container">
+                <a href={link.url + window.location.href} target="_blank" rel="noopener noreferrer">{link.title}</a>
+              </div>
+            ))}
           </div>
         </div>
       </div>
