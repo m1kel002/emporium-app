@@ -1,7 +1,7 @@
 {
     "id": 3,
     "name": "White Shoes1",
-    "description": "Comfortable white shoes perfect for casual wear.",
+    "description": "Comfortable black sneakers perfect for everyday casual wear. Made from breathable materials with a cushioned insole and durable rubber outsole, these shoes provide all-day comfort whether you're walking, commuting, or running errands.",
     "price": "5000.00",
     "quantity": 5,
     "image": "/public/product1.jpg",
@@ -47,6 +47,50 @@
             },
             "rating": 4,
             "comment": "Good quality but a bit pricey." 
+        },
+        {
+            "id": "103",
+            "user": {
+                "id": "3",
+                "name": "Charlie",
+                "email": "charlie@example.com",
+                "avatarUrl": "/public/default-avatar.png"
+            },
+            "rating": 3,
+            "comment": "Average shoes, expected better comfort."
+        },
+        {
+            "id": "104",
+            "user": {
+                "id": "4",
+                "name": "Diana",
+                "email": "diana@example.com",
+                "avatarUrl": "/public/default-avatar.png"
+            },
+            "rating": 5,
+            "comment": "Stylish and comfy, I love them!"
+        },
+        {
+            "id": "105",
+            "user": {
+                "id": "5",
+                "name": "Ethan",
+                "email": "ethan@example.com",
+                "avatarUrl": "/public/default-avatar.png"
+            },
+            "rating": 2,
+            "comment": "Not very durable, sole wore out quickly."
+        },
+        {
+            "id": "106",
+            "user": {
+                "id": "6",
+                "name": "Fiona",
+                "email": "fiona@example.com",
+                "avatarUrl": "/public/default-avatar.png"
+            },
+            "rating": 4,
+            "comment": "Good fit and quality, would buy again."
         }
     ],
     "soldCount": 10
