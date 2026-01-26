@@ -11,4 +11,5 @@ export interface Product {
 	variations?: Array<ProductVariation>;
 	reviews?: Array<Review>;
 	soldCount?: number;
+	stocks?: number;
 }

@@ -4,6 +4,7 @@
     "description": "Comfortable black sneakers perfect for everyday casual wear. Made from breathable materials with a cushioned insole and durable rubber outsole, these shoes provide all-day comfort whether you're walking, commuting, or running errands.",
     "price": "5000.00",
     "quantity": 5,
+    "stocks": 15,
     "image": "/public/product1.jpg",
     "shop": {
         "id": 1,
