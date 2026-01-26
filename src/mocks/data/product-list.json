@@ -8,12 +8,27 @@
             "name": "White Shoes1",
             "price": "5000.00",
             "quantity": 5,
+            "image": "/public/product1.jpg",
             "shop": {
                 "id": 1,
                 "name": "Shop 2"
             },
             "created_at": "2025-04-14T06:33:23.774724Z",
-            "updated_at": "2025-04-14T06:33:23.774743Z"
+            "updated_at": "2025-04-14T06:33:23.774743Z",
+            "variations": [
+                {
+                    "id": "21",
+                    "name": "Size 9",
+                    "price": 5200.00,
+                    "image": "/public/running-shoe.jpg"
+                },
+                {
+                    "id": "22",
+                    "name": "Size 10",
+                    "price": 5300.00,
+                    "image": "/public/running-shoe.jpg"
+                }
+            ]
         }
     ]
 }

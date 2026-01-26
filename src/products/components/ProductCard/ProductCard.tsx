@@ -8,7 +8,7 @@ interface ProductProps {
 const ProductCard = ({product}: ProductProps) => {
 	return (
 		<div className="product-card" data-testid="ProductCard">
-			<img className="product-image" src={product.image ? product.image: 'default.png'} data-testid="ProductImage"></img>
+			<img className="product-image" src={product.image ? product.image: 'public/default_image.png'} data-testid="ProductImage"></img>
 			<div className="product-details">
 				<div className="product-name" data-testid="ProductName">{product.name}</div>
 				<div className="product-price" data-testid="ProductPrice">${product.price}</div>

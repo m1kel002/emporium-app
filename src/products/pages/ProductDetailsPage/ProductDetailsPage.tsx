@@ -15,6 +15,7 @@ const ProductDetailsPage = () => {
   const [product, setProduct] = useState<Product>();
   const [quantity, setQuantity] = useState(1);
   const { id } = useParams();
+  let displayVariation = undefined;
 
   const handleChange = (event: PointerEvent, tabIndex: number) => {
     setTabIndex(tabIndex);
@@ -33,18 +34,17 @@ const ProductDetailsPage = () => {
     };
     getProduct();
   }, [id]);
-  let displayVariation = undefined;
+
+  console.log("Product variations:", product);
   if (product?.variations) {
-      displayVariation = (
-      <div className="variation-container">
-        <span>Variation:</span>
-        <div className="variation">
-          {product?.variations.map((variation, index) => (
-            <TileButton key={index} title={variation}></TileButton>
-          ))}
-        </div>
-      </div>
-    );
+    displayVariation = (product.variations.map((variation, index) => (
+      <img
+          key={index}
+          className="thumbnail"
+          src={`${variation.image}`}
+          alt="product-image"
+      />
+    )));
   }
 
   return (
@@ -53,25 +53,11 @@ const ProductDetailsPage = () => {
         <div className="product-image-container">
           <img
             className="product-image"
-            src="/product1.jpg"
+            src={product?.image || "/default_image.png"}
             alt="product-image"
           />
           <div className="thumbnail-container">
-            <img
-              className="thumbnail"
-              src="/product1.jpg"
-              alt="product-image"
-            />
-            <img
-              className="thumbnail"
-              src="/product1.jpg"
-              alt="product-image1"
-            />
-            <img
-              className="thumbnail"
-              src="/product1.jpg"
-              alt="product-image2"
-            />
+            {displayVariation}
           </div>
         </div>
         <div className="product-container">
@@ -85,7 +71,6 @@ const ProductDetailsPage = () => {
             </div>
             <div className="sold-container">Sold: {product?.soldCount || 0}</div>
           </div>
-          {displayVariation}
           <div className="quantity-container">
             Quantity:
             <ProductQuantity
@@ -123,10 +108,12 @@ const ProductDetailsPage = () => {
         <ProductDescriptionTabPanel
           value={tabIndex}
           index={0}
+          description={product?.description}
         ></ProductDescriptionTabPanel>
         <ProductReviewTabPanel
           value={tabIndex}
           index={1}
+          reviews={product?.reviews}
         ></ProductReviewTabPanel>
       </div>
     </div>

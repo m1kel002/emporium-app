@@ -1,7 +1,12 @@
+import { Review } from "../../../shared/models/Review";
 import TabPanelProps from "../../../shared/models/TabPanelProps";
 import ReviewCard from "../../components/ReviewCard/ReviewCard";
 
-const ProductReviewTabPanel = ({ value, index }: TabPanelProps) => {
+interface ProductReviewTabPanelProps extends TabPanelProps {
+  reviews?: Array<Review>
+}
+
+const ProductReviewTabPanel = ({ value, index, reviews }: ProductReviewTabPanelProps) => {
   return (
     <div
       role="tabpanel"
@@ -9,9 +14,9 @@ const ProductReviewTabPanel = ({ value, index }: TabPanelProps) => {
       id={`tabpanel-${index}`}
       aria-labelledby={`tab-${index}`}
     >
-      <ReviewCard></ReviewCard>
-      <ReviewCard></ReviewCard>
-      <ReviewCard></ReviewCard>
+      {reviews?.map((review, idx) => (
+        <ReviewCard key={idx} review={review}></ReviewCard>
+      ))}
     </div>
   );
 };

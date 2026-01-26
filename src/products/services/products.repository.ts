@@ -21,8 +21,7 @@ export const fetchProducts = async (productName?: string): Promise<Product[] | u
     }
     const response = await fetch(endpoint);
     const data = await response.json();
-    // Temporary image assignment for testing purposes
-    const products: Product[] = data.results.map((item: Product) => ({...item, image: "http://localhost:8000/media/media/test-image-upload.png"}));
+    const products: Product[] = data.results;
     return products;
   } catch (error) {
     console.error(`Error fetching products: ${error}`);
@@ -32,16 +31,13 @@ export const fetchProducts = async (productName?: string): Promise<Product[] | u
 export const fetchProductDetails = async (
   id: string
 ): Promise<Product | undefined> => {
+  const endpoint = `${BASE_URL}/product/${id}`;
 
-  return mockProductDetail as Product;
-
-  // const endpoint = `${BASE_URL}/product/${id}`;
-
-  // try {
-  //   const response = await fetch(endpoint);
-  //   const data = await response.json();
-  //   return data;
-  // } catch (error) {
-  //   console.error(`Error fetching product details ${error}`);
-  // }
+  try {
+    const response = await fetch(endpoint);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(`Error fetching product details ${error}`);
+  }
 };
