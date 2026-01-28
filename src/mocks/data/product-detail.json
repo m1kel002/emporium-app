@@ -5,6 +5,7 @@
     "price": "5000.00",
     "quantity": 5,
     "stocks": 15,
+    "soldCount": 10,
     "image": "/public/product1.jpg",
     "shop": {
         "id": 1,
@@ -93,6 +94,5 @@
             "rating": 4,
             "comment": "Good fit and quality, would buy again."
         }
-    ],
-    "soldCount": 10
+    ]
 }
