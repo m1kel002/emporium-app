@@ -81,6 +81,11 @@
         &:hover {
             cursor: pointer;
         }
+
+        &:disabled {
+            background-color: rgb(45, 43, 43);
+            cursor: not-allowed;
+        }
       }
     }
 

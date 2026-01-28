@@ -16,6 +16,7 @@ const ProductDetailsPage = () => {
   const [quantity, setQuantity] = useState(1);
   const { id } = useParams();
   let displayVariation = undefined;
+  let isDisabled = !product?.stocks || product?.stocks <= 0;
   const SOCIAL_LINKS = [
     {
 
@@ -92,6 +93,7 @@ const ProductDetailsPage = () => {
             <ProductQuantity
               quantity={quantity}
               setQuantity={setQuantity}
+              isDisabled={isDisabled}
             ></ProductQuantity>
           </div>
           <div className="total-price-container">
@@ -100,7 +102,7 @@ const ProductDetailsPage = () => {
           </div>
 
           <div className="cta-container">
-            <button className="cta">Add to cart</button>
+            <button className="cta" disabled={isDisabled}>Add to cart</button>
           </div>
 
           <div className="share-container">

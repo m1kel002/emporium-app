@@ -5,9 +5,10 @@ import RemoveIcon from "@mui/icons-material/Remove";
 interface QuantityProps {
   quantity: number;
   setQuantity: React.Dispatch<React.SetStateAction<number>>;
+  isDisabled: boolean;
 }
 
-const ProductQuantity = ({ quantity, setQuantity }: QuantityProps) => {
+const ProductQuantity = ({ quantity, setQuantity, isDisabled=false }: QuantityProps) => {
   const handleQuantity = (value: number) => {
     if (value < 0 && quantity < 2) {
       return;
@@ -16,21 +17,20 @@ const ProductQuantity = ({ quantity, setQuantity }: QuantityProps) => {
     setQuantity(quantity + value);
   };
 
+  console.log("isDisabled in ProductQuantity:", isDisabled);
+
   return (
     <div className="product-quantity-container" data-testid="quantityContainer">
-      <button className="minus" data-testid="minus" onClick={() => {
+      <button className="minus" data-testid="minus" disabled={isDisabled} onClick={() => {
             handleQuantity(-1);
       }}>
-        <RemoveIcon
-        ></RemoveIcon>
+        <RemoveIcon></RemoveIcon>
       </button>
       <span className="quantity" data-testid="quantity">{quantity}</span>
-      <button className="add" data-testid="add" onClick={() => {
+      <button className="add" data-testid="add" disabled={isDisabled} onClick={() => {
             handleQuantity(1);
           }}>
-        <AddIcon
-
-        ></AddIcon>
+        <AddIcon></AddIcon>
       </button>
     </div>
   );
